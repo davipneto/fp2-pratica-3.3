@@ -19,5 +19,22 @@ public class ExemploMatriz {
         Matriz transp = orig.getTransposta();
         System.out.println("Matriz original: " + orig);
         System.out.println("Matriz transposta: " + transp);
+        Matriz A = new Matriz(2,2);
+        Matriz B = new Matriz(2,2);
+        double[][] a = A.getMatriz();
+        a[0][0] = 0.0;
+        a[0][1] = 1.0;
+        a[1][0] = 2.0;
+        a[1][1] = 3.0;
+        double[][] b = B.getMatriz();
+        b[0][0] = 0.0;
+        b[0][1] = 0.2;
+        b[1][0] = 0.4;
+        b[1][1] = 0.6;
+        System.out.println("Matriz A: " + A);
+        System.out.println("Matriz B: " + B);
+        System.out.println("A + B: " + A.soma(B));
+        System.out.println("A x B: " + A.prod(B));
     }
+       
 }

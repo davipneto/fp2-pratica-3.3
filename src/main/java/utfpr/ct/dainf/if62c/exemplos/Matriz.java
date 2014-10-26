@@ -46,7 +46,13 @@ public class Matriz {
      * @return A soma das matrizes
      */
     public Matriz soma(Matriz m) {
-        throw new UnsupportedOperationException("Soma de matrizes não implementada.");
+        Matriz soma = new Matriz(mat.length,mat[0].length);
+        for(int i = 0; i < mat.length; i++){
+            for(int j=0; j < mat[i].length; j++){
+                soma.mat[i][j]=mat[i][j]+m.mat[i][j];
+            }
+        }
+        return soma;
     }
 
     /**
@@ -55,7 +61,15 @@ public class Matriz {
      * @return O produto das matrizes
      */
     public Matriz prod(Matriz m) {
-        throw new UnsupportedOperationException("Produto de matrizes não implementado.");
+        Matriz prod = new Matriz(mat.length,m.mat[0].length);
+        for(int i=0;i<this.mat.length;i++) {
+            for(int j=0;j<m.mat[0].length;j++){
+                for(int k=0;k<m.mat.length;k++){
+                    prod.mat[i][j]+=mat[i][k] * m.mat[k][j];
+                }
+            }
+        }
+        return prod;
     }
 
     /**
